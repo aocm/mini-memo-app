@@ -1,24 +1,4 @@
-# vue3-express-ssr-sample
-ViteでVue3をビルドしてExperssでSSRするアプリのスケルトンです。
-
-## 導入内容
-- ViteでVue3をSSRしてExpressでホストする
-    - metaの更新(SEO対策)
-- ExpressでAPI
-    - express-session(in memory)
-    - logger(log4js)
-    - esmoduleで作成してbabelでトランスパイル
-- 動作確認
-    - JestでのExpressのAPIテスト
-    - CypressでのE2Eテスト
-    - Storybookでコンポーネント確認
-    - serverless-offlineで動作確認
-- 開発環境の工夫
-    - dockerコンテナの利用
-    - npm workspacesの利用
-    - nodemonの利用
-    - eslintでフォーマット
-    - ADRを用いた意思決定管理
+# mini-memo-app
 
 ## 開発、ビルド、実行の流れ
 1. dockerで開発環境を準備する
