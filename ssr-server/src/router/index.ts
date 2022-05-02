@@ -4,12 +4,12 @@ import {
   createWebHistory,
   RouteRecordRaw,
 } from 'vue-router'
-import Home from '../pages/HomePage.vue'
-import About from '../pages/AboutPage.vue'
-import Yamabiko from '../pages/YamabikoPage.vue'
-import YamabikoResponse from '../components/YamabikoResponse.vue'
-import YamabikoHistory from '../components/YamabikoHistory.vue'
-import { metas } from '../metas/index.js'
+import Home from '@/pages/HomePage.vue'
+import About from '@/pages/AboutPage.vue'
+import Yamabiko from '@/pages/YamabikoPage.vue'
+import YamabikoResponse from '@/components/YamabikoResponse.vue'
+import YamabikoHistory from '@/components/YamabikoHistory.vue'
+import { metas } from '@/metas/index.js'
 
 const routes: Array<RouteRecordRaw> = [
   {

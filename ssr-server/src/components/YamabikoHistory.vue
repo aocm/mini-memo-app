@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, useSSRContext } from '@vue/runtime-core'
-import { getData } from '../utils/api'
+import { getData } from '@/utils/api'
 
 const isServer = import.meta.env.SSR
 const data = ref({history: []})

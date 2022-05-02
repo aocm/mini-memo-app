@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from '@vue/reactivity'
-import Yamabiko from '../domain/yamabiko'
+import Yamabiko from '@/domain/yamabiko'
+import BaseButton from '@/components/atoms/BaseButton.vue'
+
 const response = ref('')
 const message = ref('')
 
