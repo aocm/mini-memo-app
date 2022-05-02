@@ -2,10 +2,14 @@
   <div class="common-layout">
     <el-container>
       <el-header>
-        <div id="top-logo">MINI-MEMO-APP</div>
+        <div id="top-logo">
+          MINI-MEMO-APP
+        </div>
       </el-header>
       <el-main>
-        <router-link to="/memo">goto memo</router-link>
+        <router-link to="/memo">
+          goto memo
+        </router-link>
       </el-main>
     </el-container>
   </div>

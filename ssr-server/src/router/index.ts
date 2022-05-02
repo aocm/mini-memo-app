@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'LandingPage',
     component: LandingPage,
-    meta: {...metas['/']}
+    meta: {...metas['/']}// eslint-disable-line
   },
   {
     path: '/memo',
@@ -26,19 +26,19 @@ const routes: Array<RouteRecordRaw> = [
         path: '/memo',
         name: 'TopPage',
         component: TopPage,
-        meta: {...metas['/']}
+        meta: {...metas['/']}// eslint-disable-line
       },
       {
         path: '/memo/view',
         name: 'MemoView',
         component: MemoView,
-        meta: {...metas['/']}
+        meta: {...metas['/']}// eslint-disable-line
       },
       {
         path: '/memo/new',
         name: 'MemoView',
         component: MemoView, // todo
-        meta: {...metas['/']}
+        meta: {...metas['/']}// eslint-disable-line
       },
     ]
   },

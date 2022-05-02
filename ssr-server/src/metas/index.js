@@ -3,23 +3,23 @@ export const DEFAULT_TITLE = 'Apps'
 
 export const metas = {
   // Vue
-  "/" :{
+  '/': {
     title: 'top',
     description: 'top'
   },
-  "/about" :{
+  '/about': {
     title: 'about',
     description: 'about'
   },
-  "/yamabiko" :{
+  '/yamabiko': {
     title: 'やまびこ',
     description: '書き込むとやまびこが帰ってきます。'
   },
-  "/history" :{
+  '/history': {
     title: 'やまびこ履歴',
     description: 'やまびこの履歴を表示します。'
   },
-  "/yamabiko-res" :{
+  '/yamabiko-res': {
     title: 'YamabikoResponse',
     description: 'YamabikoResponse'
   },
@@ -28,14 +28,14 @@ export const metas = {
 }
 
 export const getMeta = (path)=>{
-  if(path === '') path = '/'
-  
+  if (path === '') path = '/'
+
   let htmlTitle = DEFAULT_TITLE
   let htmlDescription = ''
-  try{
+  try {
     htmlTitle = metas[path].title
     htmlDescription = metas[path].description
-  }catch{
+  } catch {
     htmlTitle = DEFAULT_TITLE
     htmlDescription = ''
   }
