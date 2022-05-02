@@ -5,7 +5,9 @@ import {
   RouteRecordRaw,
 } from 'vue-router'
 import LandingPage from '@/pages/LandingPage.vue'
-import About from '@/pages/AboutPage.vue'
+import MemoBaseLayout from '@/pages/memo/BaseLayout.vue'
+import TopPage from '@/pages/memo/TopPage.vue'
+import MemoView from '@/pages/memo/MemoViewPage.vue'
 import { metas } from '@/metas/index.js'
 
 const routes: Array<RouteRecordRaw> = [
@@ -16,10 +18,29 @@ const routes: Array<RouteRecordRaw> = [
     meta: {...metas['/']}
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About,
-    meta: {...metas['/about']}
+    path: '/memo',
+    name: 'MemoBaseLayout',
+    component: MemoBaseLayout,
+    children: [
+      {
+        path: '/memo',
+        name: 'TopPage',
+        component: TopPage,
+        meta: {...metas['/']}
+      },
+      {
+        path: '/memo/view',
+        name: 'MemoView',
+        component: MemoView,
+        meta: {...metas['/']}
+      },
+      {
+        path: '/memo/new',
+        name: 'MemoView',
+        component: MemoView, // todo
+        meta: {...metas['/']}
+      },
+    ]
   },
 ]
 

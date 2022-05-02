@@ -1,8 +1,8 @@
 <template>
-  <div class="common-layout">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
-    </el-container>
-  </div>
+  <section class="hero is-fullheight">
+    <div class="hero-body ">
+      home
+    </div>
+    <router-link to="/memo">goto memo</router-link>
+  </section>
 </template>
