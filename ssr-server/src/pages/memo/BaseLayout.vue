@@ -17,8 +17,7 @@ const goMemoCreate = ()=>{
 <template>
   <el-container>
     <el-header>
-      <h1>LOGO</h1>
-      <!-- TODO 後でなおす -->
+      <div id="logo">MINI-MEMO-APP</div>
     </el-header>
     <el-menu
       :default-active="activeIndex"
@@ -35,3 +34,15 @@ const goMemoCreate = ()=>{
     </el-main>
   </el-container>
 </template>
+
+<style scoped>
+#logo {
+  font-size: 18px;
+  text-align: center;
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 1px #96c2fe;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+</style>
