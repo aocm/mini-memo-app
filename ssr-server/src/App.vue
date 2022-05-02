@@ -1,14 +1,5 @@
 <template>
   <div>
-    <div id="nav">
-      <router-link id="toTopLink" to="/">Top</router-link>
-      |
-      <router-link id="toAboutLink" to="/about">About</router-link>
-      |
-      <router-link id="toYamabikoLink" to="/yamabiko">Yamabiko</router-link>
-      |
-      <router-link id="toHistoryLink" to="/history">History</router-link>
-    </div>
     <router-view v-slot="{ Component }">
       <Suspense>
         <component :is="Component" />
