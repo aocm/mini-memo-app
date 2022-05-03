@@ -6,7 +6,7 @@ import {
 } from 'vue-router'
 import LandingPage from '@/pages/LandingPage.vue'
 import MemoBaseLayout from '@/pages/memo/BaseLayout.vue'
-import TopPage from '@/pages/memo/TopPage.vue'
+import MemoList from '@/pages/memo/MemoList.vue'
 import MemoView from '@/pages/memo/MemoViewPage.vue'
 import { metas } from '@/metas/index.js'
 
@@ -24,21 +24,21 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '/memo',
-        name: 'TopPage',
-        component: TopPage,
-        meta: {...metas['/']}// eslint-disable-line
+        name: 'MemoList',
+        component: MemoList,
+        meta: {...metas['/memo']}// eslint-disable-line
       },
       {
         path: '/memo/view',
         name: 'MemoView',
         component: MemoView,
-        meta: {...metas['/']}// eslint-disable-line
+        meta: {...metas['/memo/view']}// eslint-disable-line
       },
       {
         path: '/memo/new',
-        name: 'MemoView',
+        name: 'MemoNew',
         component: MemoView, // todo
-        meta: {...metas['/']}// eslint-disable-line
+        meta: {...metas['/memo/new']}// eslint-disable-line
       },
     ]
   },

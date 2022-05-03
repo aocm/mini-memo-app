@@ -11,18 +11,15 @@ export const metas = {
     title: 'about',
     description: 'about'
   },
-  '/yamabiko': {
-    title: 'やまびこ',
-    description: '書き込むとやまびこが帰ってきます。'
+  '/memo': {
+    title: 'メモ一覧',
+    description: 'メモ一覧'
   },
-  '/history': {
-    title: 'やまびこ履歴',
-    description: 'やまびこの履歴を表示します。'
+  '/memo/new': {
+    title: 'メモ作成',
+    description: 'メモ作成'
   },
-  '/yamabiko-res': {
-    title: 'YamabikoResponse',
-    description: 'YamabikoResponse'
-  },
+
 
   // exprss
 }

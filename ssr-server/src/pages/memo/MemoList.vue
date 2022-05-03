@@ -9,12 +9,12 @@
         <el-table-column
           prop="date"
           label="Date"
-          width="100"
+          width="120"
         />
         <el-table-column
           prop="name"
           label="Name"
-          width="100"
+          width="120"
         />
         <el-table-column
           prop="address"
@@ -51,9 +51,7 @@ const selectData= (data)=>{
 }
 
 const selectedData = reactive({
-  date: '2016-05-03',
-  name: 'Tom',
-  address: 'No. 189, Grove St, Los Angeles',
+  name: 'Not selected',
 })
 
 const tableData = [

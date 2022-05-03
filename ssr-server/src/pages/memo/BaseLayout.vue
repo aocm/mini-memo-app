@@ -13,11 +13,14 @@ const goMemoView = ()=>{
 const goMemoCreate = ()=>{
   router.push('/memo/new')
 }
+const goTop = ()=>{
+  router.push('/')
+}
 </script>
 <template>
   <el-container>
     <el-header>
-      <div id="logo">MINI-MEMO-APP</div>
+      <div id="logo" @click="goTop">MINI-MEMO-APP</div>
     </el-header>
     <el-menu
       :default-active="activeIndex"
