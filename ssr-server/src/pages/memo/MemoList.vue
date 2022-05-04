@@ -17,22 +17,16 @@
           width="120"
         />
         <el-table-column
-          prop="address"
-          label="Address"
+          prop="title"
+          label="Title"
         />
       </el-table>
     </el-aside>
-    <el-main>
+    <el-main class="view-container">
       <el-card class="box-card">
         <template #header>
           <div class="card-header">
             <span>{{ selectedData.name }}</span>
-            <el-button
-              class="button"
-              type="text"
-            >
-              Operation button
-            </el-button>
           </div>
         </template>
         {{ selectedData }}
@@ -47,7 +41,7 @@ import { reactive, ref } from 'vue'
 const selectData= (data)=>{
   selectedData.date = data.date
   selectedData.name = data.name
-  selectedData.address = data.address
+  selectedData.title = data.title
 }
 
 const selectedData = reactive({
@@ -58,22 +52,29 @@ const tableData = [
   {
     date: '2016-05-03',
     name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    title: 'No. 189, Grove St, Los Angeles',
   },
   {
     date: '2016-05-02',
     name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    title: 'No. 189, Grove St, Los Angeles',
   },
   {
     date: '2016-05-04',
     name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    title: 'No. 189, Grove St, Los Angeles',
   },
   {
     date: '2016-05-01',
     name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    title: 'No. 189, Grove St, Los Angeles',
   },
 ]
 </script>
+<style scoped>
+.box-card{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+</style>
