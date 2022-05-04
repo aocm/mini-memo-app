@@ -1,7 +1,7 @@
 
 import express from 'express'
 import session from 'express-session'
-import yamanikoRouter from './api/controller/yamabikoController'
+import memoController from './api/controller/memoController'
 import { logger } from './log/logger'
 
 export function createExpressApp() {
@@ -24,12 +24,7 @@ export function createExpressApp() {
     logger.debug(req.originalUrl)
     next() // 個別処理へ
   })
-  app.use('/api/yamabiko', yamanikoRouter)
-
-  app.use('/test', async (req, res) => {
-    logger.info(req.body)
-    res.json({test: 'test'})
-  })
+  app.use('/api/memo', memoController)
 
   return app
 }

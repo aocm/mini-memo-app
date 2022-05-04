@@ -20,7 +20,6 @@ export const metas = {
     description: 'メモ作成'
   },
 
-
   // exprss
 }
 
