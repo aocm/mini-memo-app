@@ -5,7 +5,7 @@ import {
   RouteRecordRaw,
 } from 'vue-router'
 import LandingPage from '@/pages/LandingPage.vue'
-import MemoBaseLayout from '@/pages/memo/BaseLayout.vue'
+import MemoBaseLayout from '@/layouts/MemoLayout.vue'
 import MemoList from '@/pages/memo/MemoList.vue'
 import MemoView from '@/pages/memo/MemoViewPage.vue'
 import { metas } from '@/metas/index.js'
