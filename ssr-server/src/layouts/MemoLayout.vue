@@ -24,9 +24,9 @@ const goTop = () => {
       mode="horizontal"
       @select="handleSelect"
     >
-      <el-menu-item index="/memo">みる</el-menu-item>
-      <el-menu-item index="/memo/new">つくる</el-menu-item>
-      <el-menu-item index="/memo/search" disabled>さがす</el-menu-item>
+      <el-menu-item index="/memo" id="menu-tab-list">みる</el-menu-item>
+      <el-menu-item index="/memo/new" id="menu-tab-new">つくる</el-menu-item>
+      <el-menu-item index="/memo/search" disabled id="menu-tab-search">さがす</el-menu-item>
     </el-menu>
     <el-main>
       <router-view />
