@@ -9,6 +9,9 @@ const handleSelect = (key: string, keyPath: string[]) => {
   // console.log(key, keyPath)
   window.location.href = key
 }
+const goTop = () => {
+  window.location.href = '/'
+}
 </script>
 <template>
   <el-container>
@@ -21,8 +24,8 @@ const handleSelect = (key: string, keyPath: string[]) => {
       mode="horizontal"
       @select="handleSelect"
     >
-      <el-menu-item index="/memo" @click="goMemoView">みる</el-menu-item>
-      <el-menu-item index="/memo/new" @click="goMemoCreate">つくる</el-menu-item>
+      <el-menu-item index="/memo">みる</el-menu-item>
+      <el-menu-item index="/memo/new">つくる</el-menu-item>
       <el-menu-item index="/memo/search" disabled>さがす</el-menu-item>
     </el-menu>
     <el-main>
