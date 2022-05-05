@@ -12,9 +12,9 @@
         - フォルダ単位で実行するなら`-s "cypress/integration/dirA/*"`とすることも可能
     - rootディレクトリで `npm run build -w ssr-server` を実行してビルド。
 1. dockerイメージにビルドする
-    - 例） `docker build -f Dockerfile.prod -t vue-express-ssr-image .`
+    - 例） `docker build -f Dockerfile.prod -t mini-memo-app-image .`
 1. dockerイメージを利用してデプロイする
-    - 例） `docker run -it -p 3001:3000 --name vue-express-ssr vue-express-ssr-image`
+    - 例） `docker run -it -p 3001:3000 --name mini-memo-app mini-memo-app-image`
     - 環境変数などもコマンドで付与が可能
 
 ### sls offlineをつかって動作確認する
@@ -32,11 +32,11 @@ local用のdockerにslsをインストールしてあるので、それを利用
 Dockerコンテナを用いず開発することも可能ですが、ビルドはコンテナで対応するほうが良いとおもいます
 
 ### イメージビルド後の解説
-- ビルド `docker build -f Dockerfile.prod -t vue-express-ssr-image .`
+- ビルド `docker build -f Dockerfile.prod -t mini-memo-app-image .`
     - -f はDockerfileの指定
-    - -t はタグの指定。vue-express-ssr-image:0.1などのようにバージョン指定も可能
-- イメージから作成 `docker run -it -p 3001:3000 --name vue-express-ssr vue-express-ssr-image`
+    - -t はタグの指定。mini-memo-app-image:0.1などのようにバージョン指定も可能
+- イメージから作成 `docker run -it -p 3001:3000 --name mini-memo-app mini-memo-app-image`
     - 開発とかぶるためportをずらしているが、本番運用するのであればLB等と合うように設定すれば問題ない
--  `docker start vue-express-ssr`
+-  `docker start mini-memo-app`
     - 2回目以降の起動時、コンテナが残っているためstartで起動する
-- 不要なコンテナを削除する場合 `docker rm vue-express-ssr`
+- 不要なコンテナを削除する場合 `docker rm mini-memo-app`

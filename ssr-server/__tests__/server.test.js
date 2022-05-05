@@ -26,4 +26,15 @@ describe('memoデータ確認', () => {
     expect(res2.body.result[4].title).toEqual(exprectData.title)
     // uuidとdateのモックはTODO
   })
+
+  it('post /api/memo エラーパターン', async () => {
+    const {app} = await createDevServer()
+    const res = await request(app)
+      .post('/api/memo')
+      .send({
+        name: 'name',
+      })
+    expect(res.status).toBe(400)
+    expect(res.body).toEqual({result:'error'})
+  })
 })

@@ -13,6 +13,7 @@ router.post('/', (req, res, next) => {
   if (isSuccess) {
     res.json({result: "success"} )
   }else{
+    res.status(400)
     res.json({result: "error"} )
   }
 })

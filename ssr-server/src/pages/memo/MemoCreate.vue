@@ -11,6 +11,8 @@ const form = reactive({
 const onSubmit = async () => {
   console.log('submit!')
   await postData('/api/memo',form)
+  .then(()=>window.alert('success'))
+  .catch(()=>window.alert('error'))
 }
 </script>
 
