@@ -4,9 +4,12 @@ import compression from 'compression'
 import serveStatic from 'serve-static'
 import { createExpressApp } from './src/express-base'
 import { getMeta } from './src/metas'
+import MemoServie from './src/domain/memoService'
+const memoService = new MemoServie()
 
 const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD
 const resolve = (p) => path.resolve(__dirname, p)
+let twitterOGP = ''
 
 export async function createDevServer(root = process.cwd()) {
   const app = createExpressApp()
@@ -30,8 +33,17 @@ export async function createDevServer(root = process.cwd()) {
   app.use(vite.middlewares)
 
   app.use('*', async (req, res, next) => {
+    // ここから共通処理
     const url = req.originalUrl
     const {htmlTitle, htmlDescription} = getMeta(req.baseUrl)
+    if (req.baseUrl==='/memo/view'){
+      const memo = memoService.findById(req.query.id)
+      twitterOGP = `<meta property="og:title" content="${memo.result.title}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:3000/memo/view?id=2">`
+    // TODO urlは環境変数等で調整
+    }
+    // ここまで共通処理
     try {
       const template = await vite.transformIndexHtml(url, fs.readFileSync(resolve('index.html'), 'utf-8'))
       const render = (await vite.ssrLoadModule('/src/entry-server.ts')).render
@@ -41,6 +53,7 @@ export async function createDevServer(root = process.cwd()) {
         .replace('<!--app-html-->', appHtml)
         .replace('<title>vue3-express-ssr-sample</title>', `<title>${htmlTitle}</title>`)
         .replace('<!-- meta-description-space -->', `<meta name="description" content="${htmlDescription}" />`)
+        .replace('<!-- meta-twitter-ogp-space -->', twitterOGP)
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
     } catch (e) {
       // エラーが検出された場合は、Vite に stracktrace を修正させて、次のようにマップします。
@@ -63,8 +76,16 @@ export function createProdServer() {
     })
   )
   app.use('*', async (req, res, next) => {
+    // ここから共通処理
     const url = req.originalUrl
     const {htmlTitle, htmlDescription} = getMeta(req.baseUrl)
+    if (req.baseUrl==='/memo/view'){
+      const memo = memoService.findById(req.query.id)
+      twitterOGP = `<meta property="og:title" content="${memo.result.title}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:3000/memo/view?id=2">`
+    }
+    // ここまで共通処理
     try {
       const template = indexProd
       const render = require('./server/entry-server.js').render
@@ -74,6 +95,7 @@ export function createProdServer() {
         .replace('<!--app-html-->', appHtml)
         .replace('<title>vue3-express-ssr-sample</title>', `<title>${htmlTitle}</title>`)
         .replace('<!-- meta-description-space -->', `<meta name="description" content="${htmlDescription}" />`)
+        .replace('<!-- meta-twitter-ogp-space -->', twitterOGP)
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
     } catch (e) {
       next(e)

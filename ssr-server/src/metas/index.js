@@ -19,6 +19,10 @@ export const metas = {
     title: 'メモ作成',
     description: 'メモ作成'
   },
+  '/memo/view': {
+    title: 'メモ確認',
+    description: 'メモ確認'
+  },
 
   // exprss
 }

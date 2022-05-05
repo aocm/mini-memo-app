@@ -27,4 +27,16 @@ export default class MemoService {
     logger.info(memoStore.list)
     return memoStore.list
   }
+
+  findById = (id) => {
+    const result = memoStore.list.find(e=> e.id===id)
+    if (result){
+      return {
+        result,
+        empty: false
+      }
+    } else {
+      return {empty: true}
+    }
+  }
 }

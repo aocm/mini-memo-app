@@ -3,6 +3,7 @@ import { reactive, ref } from 'vue'
 import { getData } from '@/utils/api.js'
 
 const selectData= (data)=>{
+  selectedData.id = data.id
   selectedData.date = data.date
   selectedData.name = data.name
   selectedData.title = data.title
@@ -13,6 +14,7 @@ const fetchData = reactive({
   result: [],
 })
 const selectedData = reactive({
+  id: '0',
   name: 'Not selected',
 })
 if(!isServer){
@@ -21,6 +23,11 @@ if(!isServer){
   })
 }
 
+const goViewPage = () =>{
+  console.log(selectedData.id)
+  if(selectedData.id === '0') return
+  window.location.href = `/memo/view?id=${selectedData.id}`
+}
 </script>
 
 <template>
@@ -49,7 +56,7 @@ if(!isServer){
       </el-table>
     </el-aside>
     <el-main class="view-container">
-      <el-card class="box-card">
+      <el-card @dblclick="goViewPage" class="box-card">
         <template #header>
           <div class="card-header">
             <span>{{ selectedData.name }}</span>
