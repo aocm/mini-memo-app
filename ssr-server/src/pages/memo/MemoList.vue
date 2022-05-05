@@ -34,7 +34,8 @@ if(!isServer){
         <el-table-column
           prop="date"
           label="Date"
-          width="120"
+          width="130"
+          show-overflow-tooltip="true"
         />
         <el-table-column
           prop="name"

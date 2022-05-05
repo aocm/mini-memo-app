@@ -8,6 +8,7 @@ import LandingPage from '@/pages/LandingPage.vue'
 import MemoBaseLayout from '@/layouts/MemoLayout.vue'
 import MemoList from '@/pages/memo/MemoList.vue'
 import MemoView from '@/pages/memo/MemoViewPage.vue'
+import MemoCreate from '@/pages/memo/MemoCreate.vue'
 import { metas } from '@/metas/index.js'
 
 const routes: Array<RouteRecordRaw> = [
@@ -37,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/memo/new',
         name: 'MemoNew',
-        component: MemoView, // todo
+        component: MemoCreate,
         meta: {...metas['/memo/new']}// eslint-disable-line
       },
     ]
