@@ -24,7 +24,6 @@ if(!isServer){
 }
 
 const goViewPage = () =>{
-  console.log(selectedData.id)
   if(selectedData.id === '0') return
   window.location.href = `/memo/view?id=${selectedData.id}`
 }
